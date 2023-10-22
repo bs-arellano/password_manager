@@ -1,4 +1,5 @@
 const express = require('express')
+const cors = require('cors');
 const router = require('./src/routes/router')
 const mongoose = require('mongoose');
 const { HOST, PORT, DB_HOST, DB_PORT } = require('./src/configs/constants')
@@ -14,7 +15,13 @@ db.once("open", function () {
 
 //SERVER
 const app = express()
-app.use(express.json())
+
+const corsOptions = {
+    origin: 'http://localhost:5173',
+};
+
+app.use(express.json());
+app.use(cors(corsOptions))
 //Middleware
 app.use((req, res, next) => {
     console.log(`Solicitud ${req.method} recibida en ${req.url}`)
