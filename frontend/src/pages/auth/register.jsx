@@ -52,7 +52,9 @@ const Register = () => {
     }
     return (
         <>
+
             <form className="dataForm" onSubmit={handleSubmit}>
+                <h2>Registrarse</h2>
                 {/* USERNAME */}
                 <label htmlFor="username">Nombre de usuario</label>
                 <input

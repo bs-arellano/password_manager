@@ -1,0 +1,40 @@
+.auth-menu {
+    background-color: var(--alt-background-color);
+    position: absolute;
+    right: 0;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+    .auth-menu {
+        position: fixed;
+        margin: 0;
+        border-radius: 0;
+        left: 0;
+        right: 0;
+    }
+}
+
+.auth-menu ul {
+    margin: 0;
+    padding: 0;
+}
+
+.auth-menu li {
+    list-style: none;
+}
+
+.auth-menu a {
+    margin: 10px;
+    text-decoration: none;
+    color: #fff;
+    display: block;
+    padding: 10px 20px;
+    border-radius: 25px;
+    align-items: center;
+}
+
+.auth-menu a:hover {
+    background-color: var(--alt2-background-color);
+}

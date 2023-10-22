@@ -59,6 +59,7 @@ const Login = () => {
     return (
         <>
             <form className="dataForm" onSubmit={handleSubmit}>
+                <h2>Iniciar Sesión</h2>
                 {/* EMAIL */}
                 <label htmlFor="email">Correo eletronico</label>
                 <input

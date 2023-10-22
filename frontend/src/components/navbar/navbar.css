@@ -1,0 +1,38 @@
+.toggle-mobile-menu {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .toggle-mobile-menu {
+        display: unset;
+    }
+    .page-icon h1{
+        display: none;
+    }
+}
+
+.navigationBar {
+    background-color: var(--alt-background-color);
+    color: var(--text-color);
+    display: flex;
+    justify-content: space-between;
+    height: 50px;
+    padding-left: 20px;
+}
+
+.page-icon {
+    display: flex;
+}
+
+.page-icon img,
+.user-icon img,
+.toggle-mobile-menu img {
+    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(180deg);
+    height: 40px;
+    margin: 5px;
+}
+
+.page-icon h1 {
+    margin: 0;
+    padding: 10px;
+}
