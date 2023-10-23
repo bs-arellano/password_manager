@@ -29,6 +29,8 @@ app.use((req, res, next) => {
         console.log('Parámetros de consulta:', req.query)
     } else if (req.method === 'POST') {
         console.log('Cuerpo de la solicitud:', req.body)
+    }else if (req.method === 'DELETE') {
+        console.log('Cuerpo de la solicitud:', req.body)
     }
     next()
 })

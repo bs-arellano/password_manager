@@ -15,4 +15,6 @@ router.get('/credentials', authenticateJWT, credentialController.getCredentials)
 
 router.post("/add_credential", authenticateJWT, credentialController.addCredential)
 
+router.delete("/credential/delete", authenticateJWT, credentialController.deleteCredential)
+
 module.exports = router

@@ -1,9 +1,9 @@
 import './container.css'
 
-const Container = ({ children }) => {
+const Container = ({ children, className }) => {
     
     return(
-        <div className="container">
+        <div className={`container ${className}`}>
             {children}
         </div>
     )

@@ -1,0 +1,39 @@
+.modal {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background-color: rgb(0, 0, 0, 0.7);
+    align-items: center;
+}
+
+.modal-overlay {
+    z-index: 1001;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.modal-content {
+    position: relative;
+    max-width: 800px;
+    margin: 2rem auto;
+    z-index: 1003;
+    padding: 2rem;
+}
+
+.modal-content .table-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.modal-content .table-container table {
+    border-collapse: collapse;
+    min-width: 50%;
+}

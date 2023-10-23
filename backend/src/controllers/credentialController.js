@@ -23,6 +23,16 @@ const credentialController = {
             console.error(err);
             res.status(500).json({ message: 'Error interno del servidor.' });
         }
+    },
+    deleteCredential: async (req, res) => {
+        const {id} = req.body
+        try{
+            await Credential.findOneAndDelete(id)
+            res.status(201).json({ message: 'Credencial borrada exitosamente.' });
+        } catch (err) {
+            console.error(err);
+            res.status(500).json({ message: 'Error interno del servidor.' });
+        }
     }
 }
 
