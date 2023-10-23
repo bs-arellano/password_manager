@@ -58,35 +58,38 @@ const Login = () => {
     }
     return (
         <Container>
-            <form className="dataForm" onSubmit={handleSubmit}>
+            <form className="data-form" onSubmit={handleSubmit}>
                 <h2>Iniciar Sesión</h2>
                 {/* EMAIL */}
-                <label htmlFor="email">Correo eletronico</label>
-                <input
-                    type="email"
-                    id="email"
-                    value={formData.email}
-                    onChange={(e) => {
-                        setFormData({
-                            ...formData,
-                            email: e.target.value
-                        })
-                    }}
-                />
+                <div className="data-form-option">
+                    <label htmlFor="email">Correo eletronico</label>
+                    <input
+                        type="email"
+                        id="email"
+                        value={formData.email}
+                        onChange={(e) => {
+                            setFormData({
+                                ...formData,
+                                email: e.target.value
+                            })
+                        }}
+                    />
+                </div>
                 {/* PASSWORD */}
-                <label htmlFor="password">Contraseña</label>
-                <input
-                    type="password"
-                    id="password"
-                    value={formData.password}
-                    onChange={(e) => {
-                        setFormData({
-                            ...formData,
-                            password: e.target.value
-                        })
-                    }}
-                />
-
+                <div className="data-form-option">
+                    <label htmlFor="password">Contraseña</label>
+                    <input
+                        type="password"
+                        id="password"
+                        value={formData.password}
+                        onChange={(e) => {
+                            setFormData({
+                                ...formData,
+                                password: e.target.value
+                            })
+                        }}
+                    />
+                </div>
                 <button type="submit">Iniciar Sesion</button>
             </form>
         </Container>

@@ -44,8 +44,8 @@ const Generator = () => {
             <h2>Generador de contraseñas</h2>
             <p>Protege tus datos personales y asegura la integridad de tus cuentas en línea con contraseñas sólidas y únicas. ¡Comienza a generar tus contraseñas personalizadas ahora mismo y mantén tus cuentas seguras en todo momento!</p>
             <Container>
-                <form id="generator-form">
-                    <div className="generator-option">
+                <form className="inline-form">
+                    <div className="inline-form-option">
                         <label htmlFor="numChars">Número de caracteres</label>
                         <input type="number" id="numChars" value={formData.numChars} min="1" max="99" onChange={(e) => {
                             if (e.target.value < 1) {
@@ -60,7 +60,7 @@ const Generator = () => {
                             })
                         }} />
                     </div>
-                    <div className="generator-option">
+                    <div className="inline-form-option">
                         <input type="checkbox" id="upperCase" checked={formData.upperCase} onChange={(e) => {
                             setFormData({
                                 ...formData,
@@ -69,7 +69,7 @@ const Generator = () => {
                         }} />
                         <label htmlFor="upperCase">Mayusculas</label>
                     </div>
-                    <div className="generator-option">
+                    <div className="inline-form-option">
                         <input type="checkbox" id="lowerCase" checked={formData.lowerCase} onChange={(e) => {
                             setFormData({
                                 ...formData,
@@ -78,7 +78,7 @@ const Generator = () => {
                         }} />
                         <label htmlFor="lowerCase">Minusculas</label>
                     </div>
-                    <div className="generator-option">
+                    <div className="inline-form-option">
                         <input type="checkbox" id="specialChars" checked={formData.specialChars} onChange={(e) => {
                             setFormData({
                                 ...formData,

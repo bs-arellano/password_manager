@@ -1,4 +1,4 @@
-import './listItem.css'
+import './list_item.css'
 
 const ListItem = ({text, data}) => {
     return(

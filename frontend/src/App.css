@@ -22,40 +22,6 @@ a:hover {
     cursor: pointer;
 }
 
-.dataForm {
-    display: flex;
-    flex-direction: column;
-    max-width: 700px;
-    margin: 0 auto;
-    padding: 2rem;
-}
-
-.dataForm label {
-    margin-top: 10px;
-    color: var(--text-color);
-}
-
-.dataForm input {
-    border: 1px solid var(--text-color);
-    padding: 8px;
-    margin: 5px 0;
-    border-radius: 25px;
-    outline: none;
-}
-
-.dataForm button {
-    background-image: linear-gradient(to right, var(--main-color), var(--second-color),var(--main-color));
-    color: var(--text-color);
-    border: none;
-    padding: 10px 20px;
-    border-radius: 25px;
-    cursor: pointer;
-    margin: 20px auto 0 auto;
-    width: 80%;
-    background-size: 200% 100%;
-    animation: gradientAnimation 5s linear infinite;
-}
-
 .view {
     flex: 1;
     height: calc(100vh - 50px);
@@ -90,14 +56,17 @@ a:hover {
 
 @keyframes gradientAnimation {
     0% {
-        background-position: 100% 0; /* Inicialmente, mueve el fondo completamente a la derecha */
+        background-position: 100% 0;
+        /* Inicialmente, mueve el fondo completamente a la derecha */
     }
+
     100% {
-        background-position: -100% 0; /* En el 100%, mueve el fondo completamente a la izquierda */
+        background-position: -100% 0;
+        /* En el 100%, mueve el fondo completamente a la izquierda */
     }
 }
 
-.page-content a{
+.page-content a {
     color: var(--text-color);
 }
 
@@ -115,19 +84,84 @@ a:hover {
     text-decoration: none;
 }
 
-/* Estilo para el ícono de GitHub */
 .github-icon {
-    fill: var(--text-color); /* Hacer el ícono blanco */
+    fill: var(--text-color);
 }
 
-/* Estilo para el texto del enlace de GitHub */
-.github-text, .dataForm h2 {
+.github-text,
+.dataForm h2 {
     font-weight: bold;
     margin-left: 10px;
     background-image: linear-gradient(to right, var(--main-color), var(--second-color), var(--main-color));
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
+    background-size: 200% 100%;
+    animation: gradientAnimation 5s linear infinite;
+}
+
+/*FORMULARIOS*/
+
+.data-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.inline-form {
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto;
+    padding: 1rem;
+    flex-wrap: wrap;
+}
+
+.data-form-option {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 80%;
+    margin: 0 auto;
+}
+
+.inline-form-option {
+    flex: 0 0 calc(25% - 10px);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    margin: 20px 5px;
+}
+
+.data-form-option input {
+    border: 1px solid var(--text-color);
+    padding: 8px;
+    margin: 5px 0 40px 0;
+    border-radius: 25px;
+    outline: none;
+}
+
+.inline-form-option input {
+    max-width: 40px;
+    background-color: var(--alt2-background-color);
+    border: none;
+    color: var(--text-color);
+    border-radius: 25px;
+    text-align: center;
+    margin: 5px 10px;
+}
+
+.data-form button,
+.inline-form button {
+    background-image: linear-gradient(to right, var(--main-color), var(--second-color), var(--main-color));
+    color: var(--text-color);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    margin: 0 auto;
+    min-width: 50%;
     background-size: 200% 100%;
     animation: gradientAnimation 5s linear infinite;
 }

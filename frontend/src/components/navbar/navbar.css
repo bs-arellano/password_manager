@@ -1,16 +1,3 @@
-.toggle-mobile-menu {
-    display: none;
-}
-
-@media (max-width: 768px) {
-    .toggle-mobile-menu {
-        display: unset;
-    }
-    .page-icon h1{
-        display: none;
-    }
-}
-
 .navigationBar {
     background-color: var(--alt-background-color);
     color: var(--text-color);
@@ -18,6 +5,10 @@
     justify-content: space-between;
     height: 50px;
     padding-left: 20px;
+}
+
+.toggle-mobile-menu {
+    display: none;
 }
 
 .page-icon {
@@ -35,4 +26,14 @@
 .page-icon h1 {
     margin: 0;
     padding: 10px;
+}
+
+@media (max-width: 768px) {
+    .toggle-mobile-menu {
+        display: unset;
+    }
+
+    .page-icon h1 {
+        display: none;
+    }
 }

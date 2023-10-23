@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import './sidebar.css'
 
 const SideBar = ({ sites }) => {
+    //Dependencias
     const navigate = useNavigate()
     const isAuthenticated = useSelector(state => state.auth.isAuthenticated)
     //Determina si se puede mostrar correctamente en la pantalla
@@ -29,9 +30,9 @@ const SideBar = ({ sites }) => {
             <aside className='sidebar'>
                 <ul>
                     {Object.entries(sites).map(([site]) => (
-                        <li key={site}>
-                            <a onClick={() => handleSiteClick(site)}>{site}</a>
-                        </li>
+                        <a key={site} onClick={() => handleSiteClick(site)}>
+                            <li>{site}</li>
+                        </a>
                     ))}
                 </ul>
             </aside>

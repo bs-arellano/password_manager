@@ -1,4 +1,4 @@
-.mobile-menu{
+.mobile-menu {
     background-color: var(--alt-background-color);
     position: fixed;
     top: 50px;
@@ -16,10 +16,6 @@
     list-style: none;
 }
 
-.mobile-menu a:active{
-    background-color: var(--main-color);
-}
-
 .mobile-menu a {
     margin: 10px;
     text-decoration: none;
@@ -28,4 +24,8 @@
     padding: 10px 20px;
     border-radius: 25px;
     align-items: center;
+}
+
+.mobile-menu a:active {
+    background-color: var(--main-color);
 }

@@ -5,31 +5,31 @@
     overflow-y: auto;
 }
 
+@media (max-width: 768px) {
+    .sidebar {
+        display: none;
+    }
+}
+
 .sidebar ul {
     margin: 0;
     padding: 0;
 }
+
 .sidebar li {
-    margin: 10px;
     list-style: none;
+}
+
+.sidebar a {
+    margin: 10px;
+    text-decoration: none;
+    color: var(--text-color);
+    padding: 10px 20px;
     border-radius: 25px;
     display: flex;
     align-items: center;
 }
 
-.sidebar li:hover{
+.sidebar a:hover {
     background-color: var(--alt-background-color);
-}
-
-.sidebar a {
-    text-decoration: none;
-    color: var(--text-color);
-    display: block;
-    padding: 10px 20px;
-}
-
-@media (max-width: 768px) {
-    .sidebar {
-        display: none;
-    }
 }

@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
+import { useSelector } from 'react-redux'
 import { useNavigate } from "react-router-dom";
-import MobileMenu from "./mobile_menu"
-import AuthMenu from "./auth_menu";
+import MobileMenu from "../mobile_menu/mobile_menu"
+import ProfileMenu from "../user_menu/profile_menu";
 
 import './navbar.css'
 import page_icon from '../../assets/page_icon.svg'
@@ -9,10 +10,13 @@ import user_icon from '../../assets/user_icon.svg'
 import menu_icon from '../../assets/menu_icon.svg'
 
 const NavBar = ({ sites }) => {
+    //Dependencias
     const navigate = useNavigate();
-
+    const isAuthenticated = useSelector(state => state.auth.isAuthenticated)
+    //Estados
     const [showMobileMenu, toggleMobileMenu] = useState(false)
     const [showAutheMenu, toggleAuthMenu] = useState(false)
+    //Renderiza dependiendo el tamaño de la pantalla
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
     useEffect(() => {
         const handleResize = () => {
@@ -39,7 +43,7 @@ const NavBar = ({ sites }) => {
                     </a>
                 </div>
                 <div className="right-elements">
-                    {windowWidth <= 768 ? (
+                    {windowWidth <= 768 &&  isAuthenticated? (
                         <>
                             <a className="toggle-mobile-menu" onClick={() => {
                                 toggleAuthMenu(false)
@@ -56,7 +60,7 @@ const NavBar = ({ sites }) => {
                 </div>
             </nav>
             {showAutheMenu ?
-                <AuthMenu show={showAutheMenu} toggle={toggleAuthMenu} /> : null}
+                <ProfileMenu show={showAutheMenu} toggle={toggleAuthMenu} /> : null}
             {windowWidth <= 768 ?
                 <MobileMenu show={showMobileMenu} toggle={toggleMobileMenu} sites={sites} />
                 : null}

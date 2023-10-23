@@ -28,7 +28,7 @@
 .auth-menu a {
     margin: 10px;
     text-decoration: none;
-    color: #fff;
+    color: var(--text-color);
     display: block;
     padding: 10px 20px;
     border-radius: 25px;

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { useNavigate } from 'react-router-dom'
 import Container from "../../components/container/container"
-import ListItem from "../../components/listItem/listItem"
+import ListItem from "../../components/list_item/list_item"
 import { BACKEND_URL } from "../../config/constants";
 import { useSelector } from "react-redux";
 
@@ -30,7 +30,7 @@ const Manager = () => {
             },
             body: JSON.stringify(data),
         })
-        if (response.ok){
+        if (response.ok) {
             window.location.reload();
         }
     }
@@ -60,7 +60,7 @@ const Manager = () => {
                 console.log('Error al realizar la solicitud:', error);
             }
         }
-    
+
         fetchData()
     }, [isAuthenticated, navigate, token])
 
@@ -69,28 +69,34 @@ const Manager = () => {
             <article>
                 <h2>Agregar una credencial</h2>
                 <Container>
-                    <form className="dataForm">
-                        <label htmlFor="adCredentialURL">Sitio web:</label>
-                        <input id="adCredentialURL" type="url" onChange={(e) => {
-                            setNewCredentialData({
-                                ...newCredentialData,
-                                url: e.target.value
-                            })
-                        }} />
-                        <label htmlFor="addCredentialUsername">Nombre de usuario</label>
-                        <input id="addCredentialUsername" type="text" onChange={(e) => {
-                            setNewCredentialData({
-                                ...newCredentialData,
-                                username: e.target.value
-                            })
-                        }} />
-                        <label htmlFor="addCredentialPassword">Contraseña:</label>
-                        <input id="addCredentialPassword" type="password" onChange={(e) => {
-                            setNewCredentialData({
-                                ...newCredentialData,
-                                password: e.target.value
-                            })
-                        }} />
+                    <form className="data-form">
+                        <div className="data-form-option">
+                            <label htmlFor="adCredentialURL">Sitio web:</label>
+                            <input id="adCredentialURL" type="url" onChange={(e) => {
+                                setNewCredentialData({
+                                    ...newCredentialData,
+                                    url: e.target.value
+                                })
+                            }} />
+                        </div>
+                        <div className="data-form-option">
+                            <label htmlFor="addCredentialUsername">Nombre de usuario</label>
+                            <input id="addCredentialUsername" type="text" onChange={(e) => {
+                                setNewCredentialData({
+                                    ...newCredentialData,
+                                    username: e.target.value
+                                })
+                            }} />
+                        </div>
+                        <div className="data-form-option">
+                            <label htmlFor="addCredentialPassword">Contraseña:</label>
+                            <input id="addCredentialPassword" type="password" onChange={(e) => {
+                                setNewCredentialData({
+                                    ...newCredentialData,
+                                    password: e.target.value
+                                })
+                            }} />
+                        </div>
                         <button onClick={(e) => {
                             e.preventDefault()
                             saveCredential()

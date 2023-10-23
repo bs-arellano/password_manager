@@ -1,10 +1,9 @@
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 
-import './auth_menu.css'
-import { useState } from "react";
+import './profile_menu.css'
 
-const AuthMenu = ({ show, toggle }) => {
+const ProfileMenu = ({ show, toggle }) => {
     const navigate = useNavigate()
     const isAuthenticated = useSelector(state => state.auth.isAuthenticated)
     const handleSiteClick = (site) => {
@@ -32,4 +31,4 @@ const AuthMenu = ({ show, toggle }) => {
     }
 }
 
-export default AuthMenu
+export default ProfileMenu
