@@ -1,22 +1,22 @@
 import { useState } from "react"
+import { useSelector } from "react-redux";
 import Container from "../../components/container/container"
 import { BACKEND_URL } from "../../config/constants";
 
 import './generator.css'
 
 const Generator = () => {
+    const token = useSelector(state => state.auth.token)
     const [generatedPassword, setGeneratedPassword] = useState(null)
     const [formData, setFormData] = useState({
         numChars: 8,
         upperCase: false,
-        lowerCase: false,
         specialChars: false
     })
     const generatePassword = async () => {
         const data = {
             "len": formData.numChars,
             "upper": formData.upperCase,
-            "lower": formData.lowerCase,
             "special_chars": formData.specialChars,
         }
         try {
@@ -25,12 +25,13 @@ const Generator = () => {
                 mode: "cors",
                 headers: {
                     'Content-Type': 'application/json',
+                    'Authorization': 'bearer ' + token
                 },
                 body: JSON.stringify(data),
             })
             if (response.ok) {
                 const result = await response.json();
-                setGeneratedPassword(result.password)
+                setGeneratedPassword(result.generated_password)
             } else {
                 console.error('Error al realizar la solicitud');
             }
@@ -70,15 +71,6 @@ const Generator = () => {
                         <label htmlFor="upperCase">Mayusculas</label>
                     </div>
                     <div className="inline-form-option">
-                        <input type="checkbox" id="lowerCase" checked={formData.lowerCase} onChange={(e) => {
-                            setFormData({
-                                ...formData,
-                                lowerCase: e.target.checked
-                            })
-                        }} />
-                        <label htmlFor="lowerCase">Minusculas</label>
-                    </div>
-                    <div className="inline-form-option">
                         <input type="checkbox" id="specialChars" checked={formData.specialChars} onChange={(e) => {
                             setFormData({
                                 ...formData,
@@ -93,11 +85,11 @@ const Generator = () => {
                     }}>Generar</button>
                 </form>
             </Container>
-            {generatedPassword?(
+            {generatedPassword && (
                 <Container>
                     {generatedPassword}
                 </Container>
-            ):null}
+            )}
         </article>
     )
 }
