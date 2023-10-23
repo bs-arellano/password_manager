@@ -1,5 +1,4 @@
 const Credential = require('../models/credentialModel');
-const User = require('../models/userModel');
 
 const credentialController = {
     getCredentials: async (req, res) => {

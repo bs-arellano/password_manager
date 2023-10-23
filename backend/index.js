@@ -3,6 +3,8 @@ const cors = require('cors');
 const router = require('./src/routes/router')
 const mongoose = require('mongoose');
 const { HOST, PORT, DB_HOST, DB_PORT } = require('./src/configs/constants')
+const User = require('./src/models/userModel')
+const Credential = require('./src/models/credentialModel')
 
 //DATABASE
 const db_address = `mongodb://${DB_HOST}:${DB_PORT}/password_manager`
@@ -25,13 +27,6 @@ app.use(cors(corsOptions))
 //Middleware
 app.use((req, res, next) => {
     console.log(`Solicitud ${req.method} recibida en ${req.url}`)
-    if (req.method === 'GET') {
-        console.log('Parámetros de consulta:', req.query)
-    } else if (req.method === 'POST') {
-        console.log('Cuerpo de la solicitud:', req.body)
-    }else if (req.method === 'DELETE') {
-        console.log('Cuerpo de la solicitud:', req.body)
-    }
     next()
 })
 //Routes
