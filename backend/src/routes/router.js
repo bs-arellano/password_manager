@@ -3,6 +3,7 @@ const router = express.Router()
 const authenticateJWT = require('./jwt_validator')
 
 const authController = require('../controllers/authController')
+const credentialController = require('../controllers/credentialController')
 
 // Ruta para registrar un nuevo usuario
 router.post('/register', authController.register);
@@ -10,9 +11,8 @@ router.post('/register', authController.register);
 // Ruta para autenticar un usuario y generar un token JWT
 router.post('/login', authController.login);
 
-router.get('/ruta-protegida', authenticateJWT, (req, res) => {
-    // Aquí puedes acceder a req.user para obtener información del usuario autenticado
-    res.json({ message: 'Ruta protegida', user: req.user });
-});
+router.get('/credentials', authenticateJWT, credentialController.getCredentials);
+
+router.post("/add_credential", authenticateJWT, credentialController.addCredential)
 
 module.exports = router

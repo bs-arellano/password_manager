@@ -4,11 +4,11 @@ import { useNavigate } from "react-router-dom";
 
 import { login } from "../../reducers/authSlice";
 import { BACKEND_URL } from "../../config/constants";
+import Container from "../../components/container/container";
 
 const Login = () => {
     const dispatch = useDispatch()
     const navigate = useNavigate()
-
     //Revisa si ya existe una sesion
     const isAuthenticated = useSelector(state => state.auth.isAuthenticated)
     useEffect(() => {
@@ -57,7 +57,7 @@ const Login = () => {
         }
     }
     return (
-        <>
+        <Container>
             <form className="dataForm" onSubmit={handleSubmit}>
                 <h2>Iniciar Sesión</h2>
                 {/* EMAIL */}
@@ -89,7 +89,7 @@ const Login = () => {
 
                 <button type="submit">Iniciar Sesion</button>
             </form>
-        </>
+        </Container>
     )
 }
 

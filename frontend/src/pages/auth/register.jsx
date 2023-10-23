@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
 import { BACKEND_URL } from "../../config/constants";
+import Container from "../../components/container/container";
 
 const Register = () => {
     const navigate = useNavigate()
@@ -51,7 +52,7 @@ const Register = () => {
         }
     }
     return (
-        <>
+        <Container>
 
             <form className="dataForm" onSubmit={handleSubmit}>
                 <h2>Registrarse</h2>
@@ -97,7 +98,7 @@ const Register = () => {
 
                 <button type="submit">Registrarse</button>
             </form>
-        </>
+        </Container>
     )
 }
 
