@@ -1,0 +1,38 @@
+#generator-form{
+    display: flex;
+    margin: 10px;
+    align-items: center;
+}
+.generator-option{
+    display: flex;
+    flex-direction: row;
+    padding: 0 20px;
+}
+.generator-option input{
+    max-width: 40px;
+    background-color: var(--alt2-background-color);
+    border: none;
+    color: var(--text-color);
+    border-radius: 25px;
+    text-align: center;
+}
+#generator-form button{
+    background-image: linear-gradient(to right, var(--main-color), var(--second-color),var(--main-color));
+    color: var(--text-color);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    margin: auto auto;
+    background-size: 200% 100%;
+    animation: gradientAnimation 20s linear infinite;
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 100% 0;
+    }
+    100% {
+        background-position: -100% 0;
+    }
+}
